@@ -25,9 +25,9 @@ out = document.getElementById("result")
 function tips (){
     price = document.getElementById("amount").value
     extra = document.getElementById("tip").value
-    results = " "
+    var results = " "
     out.innerHTML = "this works"
-    total = price/10
+    var total = price/10
     for(let i =0; i <=10; i++){
         total + price * extra 
         results += toString(total)
@@ -39,7 +39,54 @@ function tips (){
 
 </script>
 
+<form>
+    <input type="radio" id="times" name="color" value="times"   
+      checked >
+    <label for="times">*</label></br>
+  
+    <input type="radio" id="divide" name="color" 
+       value="divide">
+    <label for="divide">/</label></br>
+  
+    <input type="radio" id="exponent" name="color"   
+       value="exponent">
+    <label for="exponent">**</label></br>
 
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+  
+  <p id="result2"> This text will be replaced </p>
+
+
+<script>
+    out2 = document.getElementById("result2")
+    out2.innerHTML(0)
+    function chooseOp (){
+        alert('this works')
+        price = document.getElementById("amount").value
+        extra = document.getElementById("tip").value
+        multi = document.getElementById("time").checked
+        division = document.getElementById("divide").checked
+        expo = document.getElementById("exponent").checked
+        var final = 0
+        final = price * extra
+        if(multi == true){
+            final = price * extra
+         }
+         if(division == true){
+            final = price / extra
+         } 
+         if(expo == true){
+            final = price ** extra
+         }
+    
+
+    out2.innerHTML(final)
+    
+}
+
+
+</script>
 
 </body>
 </html> 

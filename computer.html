@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+        <title>Assignment 6: computer</title>
+    </head>
+<body>
+
+<h2>Precious orders a computer</h2>
+
+<form>
+    <label for="extra">Extra memory </label>
+    <input type ="checkbox" id="extra" name="extra" value=extra> <br>
+
+    <label for="mouse">Mouse </label>
+    <input type ="checkbox" id="mouse" name="mouse" value="mouse"> <br>
+
+    <label for="form1_nick">Cell service </label>
+    <input type ="checkbox" id="cell" name="cell" value="cell"> <br>
+
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+const my_computer = {}
+function orderComputer (){
+    my_computer = {}
+    console.log("Getting form values")
+    ext_ra = document.getElementById("extra").checked
+    mou_se = document.getElementById("mouse").checked
+    ce_ll = document.getElementById("cell").checked
+    
+    out = document.getElementById("result")
+    my_computer = {
+        extra: "false",
+        mouse: "false",
+        cell: "false"
+    }
+    if(ext_ra == true){
+        my_computer.extra = "true"
+    } 
+    if(mou_se == true){
+        my_computer.mouse = "true"
+    } 
+    if(ce_ll == true){
+        my_computer.cell = "true"
+    } 
+    out.innerHTML(my_computer)
+}
+</script>
+
+</body>
+</html> 

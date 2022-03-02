@@ -21,11 +21,21 @@
     <input type="button" onclick="orderComputer()" value="Order a computer">
 </form>
 
+<form>
+    <label for="engraved">Enter a property name </label>
+    <input type ="text" id="engraved" name="engraved" value=engraved> <br>
+
+    <label for="value">Enter a value </label>
+    <input type ="text" id="value" name="value" value=" " > <br>
+    <input type="button" id="tip_button" onclick="updateComputer()" value="Update the computer">
+</form>
+
 
 <p id="result">This text will be replaced </p>
 
 <script> 
 const my_computer = {}
+out = document.getElementById("result")
 function orderComputer (){
     my_computer = {}
     console.log("Getting form values")
@@ -48,6 +58,13 @@ function orderComputer (){
     if(ce_ll == true){
         my_computer.cell = "true"
     } 
+    out.innerHTML(my_computer)
+}
+
+function updateComputer(){
+    prop = document.getElementById("engraved").value
+    con = document.getElementById("value").value
+    my_computer.prop = con
     out.innerHTML(my_computer)
 }
 </script>

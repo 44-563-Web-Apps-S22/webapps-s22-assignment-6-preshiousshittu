@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 6: tips</title>
+</head>
+<body>
+
+<h2>Precious Shittu computes tips</h2>
+
+<form>
+    <label for="amount">Enter a check amount </label>
+    <input type ="number" id="amount" name="amount" value=20> <br>
+
+    <label for="tip">Enter tip increase </label>
+    <input type ="number" id="tip" name="tip" value="0.05" > <br>
+    <input type="button" id="tip_button" onclick="tips()" value="Find tips">
+</form>
+
+
+<p id="result"> This text will be replaced </p>
+
+<script> 
+out = document.getElementById("result")
+
+function tips (){
+    price = document.getElementById("amount").value
+    extra = document.getElementById("tip").value
+    results = " "
+    out.innerHTML = "this works"
+    total = price/10
+    for(let i =0; i <=10; i++){
+        total + price * extra 
+        results += toString(total)
+        
+    }
+    document.getElementById("tip_button").addEventListener("click", tips);
+    out.innerHTML =  results
+}
+
+</script>
+
+
+
+</body>
+</html> 
